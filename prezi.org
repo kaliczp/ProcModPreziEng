@@ -1,0 +1,725 @@
+#+TITLE: Környezeti folyamatok modellezése
+#+DATE: 2023
+#+AUTHOR: Kalicz Péter
+#+EMAIL: kalicz.peter@uni-sopron.hu
+#+OPTIONS: ':nil *:t -:t ::t <:t H:2 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:nil d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:nil tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+OPTIONS: texht:t
+#+CREATOR: Emacs 24.3.1 (Org mode 8.2.7c)
+#+DESCRIPTION: Környezeti folyamatok modellezése óravázlata
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+STARTUP: beamer
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation,aspectratio=169]
+#+BEAMER_THEME: Marburg
+
+* Beamer megjegyzések						   :noexport:
+presentation
+handout
+####+BEAMER_THEME: default
+default
+Madrid
+PaloAlto
+Pittsburgh
+
+
+* A tantárgyról                                                    :noexport:
+** Környezeti modellezés
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Tantárgyi követelmények
+- Órakeret (3 konzultáció) 
+- Évközi jegyes tárgy
+- Aláírás feltétele
+  - Házifeladatok leadása
+  - Zárthelyi dolgozat megírása
+- Kézi jegyzet vezetése ajánlott
+# #+ATTR_LATEX: :width 0.7\textwidth
+# [[file:pics/coursera.png]]
+# - Konzultációk (6 + 9)
+
+
+** Amit minél hamarabb meg kellene csinálni                        :noexport:
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- [[http://pmwin.net][~pmwin~]] telepítés (PMWIN tab és Freeware -> this file link)
+- Ismerkedés a programmal
+
+** Tananyag
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+
+- Wainwright & Mulligan: Environmental Modelling. Wiley
+- Több hasonló könyv
+- Kovács: Hidrodinamikai és transzportmodellezés I.-II.
+- Kézi jegyzet
+
+#+BEGIN_COMMENT
+Ide kellenek a könyv ábrák
+#+END_COMMENT
+
+* Modellekről                                                      :noexport:
+
+** Definíció helyett
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :END:
+
+*** 
+ #+ATTR_BEAMER: :overlay <+->
+ - Modellek a mindennapokban. Mit jelent nekünk?
+ - Mi a modell?
+ - A valóság egy adott célnak megfelelő vetülete
+ - Elvonatkoztatás (tükör)
+ - Ockham borotvája (gazdaságossági elv, azaz optimális paraméterszám)
+
+*** 
+  :PROPERTIES:
+  :BEAMER_env: theorem
+  :BEAMER_act: <2>
+  :END:
+ A modell általában létező tárgyak, folyamatok, rendszerek
+ célszerűen egyszerűsített megfelelője: olyan fizikai vagy csupán
+ leírt térbeli konstrukció, amely sematikus formában, vagy
+ egyezményesen elfogadott jelölésekkel mintáz le, illetve ábrázol
+ bizonyos tárgyi területet, folyamatot vagy rendszert. Minél
+ bonyolultabb a rendszer, annál nagyobb szükség van modellezésre
+ (Bodlaki 2004).
+
+ #+BEGIN_COMMENT
+ Egy Pollack jegyzetből jött le elsőre. Elég lexikon íze van.
+ Bodlaki Tamás: Bevezetés az operációs rendszerekbe. PTE, 2004. egy
+ doktori hivatkozás szerint.
+ #+END_COMMENT
+
+** Modellezés kérdései -- és veszélyei
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Mi a megoldandó probléma?
+- Melyek a lényeges folyamatok?
+- Mi a megfelelő tér- és időlépték?
+- Ki fogja hasznosítani a munkát?
+
+- Nincs modellezés cél nélkül!
+- Nincs univerzális világmodell!
+
+
+ Modellezés történet                                              :noexport:
+** Modellezés története
+*** 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_opt: t
+    :END:
+- Őskor :: Szimbolikus, elvont gondolkodás, barlangrajzok, egyiptomi
+           hajómodellek, épület modellek.
+- Középkor :: Kísérleti fizikával (Galilei a kísérletei alapján a
+              természet szabályait a matematika eszközeivel írja le.)
+              kezdődik.  A modell alkotás egyre elterjedtebb, de
+              sokszor széles körben nem fogadják el (pl.: Vasa 1628,
+              HMS Captain 1870).
+- Újkor :: Göttingeni iskola, numerikus matematikai alapjai, Neumann
+           János első polgári célú számítógépes modell (időjárás előrejelzés).
+*** 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_opt: t
+    :END:
+#+BEAMER: \onslide*<1->{
+#+ATTR_LATEX: :height 0.3 \textheight :center nil
+[[file:pics/42210_barlangrajz1.jpg]]
+#+BEAMER: }\onslide*<2>{
+#+ATTR_LATEX: :height 0.3 \textheight :center nil
+[[file:pics/egyptKhufuGisehSonnenbarke.jpg]]
+#+BEAMER: }\onslide*<3>{
+#+ATTR_LATEX: :height 0.3 \textheight :center nil
+[[file:pics/egypt_600px-Ship_model_E284_mg_8648-black.jpg]]
+#+BEAMER: }\onslide*<4>{
+#+ATTR_LATEX: :height 0.3 \textheight :center nil
+[[file:pics/egyptPreDynasticModelHouseEl-AmraNaqadaIICuntil3200BCEBritishMuseumEA35505.jpg]]
+#+BEAMER: }\onslide*<5->{
+#+ATTR_LATEX: :height 0.3 \textheight :center nil
+[[file:pics/egypt_House_MK.jpg]]
+#+BEAMER: }\onslide*<6>{
+#+ATTR_LATEX: :height 0.3 \textheight :center nil
+[[file:pics/Wren_modelStPaulLondon.jpg]]
+#+BEAMER: }
+
+**** Megjegyzések						   :noexport:
+
+Khufu ship Cheops pyramid mellett
+https://en.wikipedia.org/wiki/Khufu_ship
+
+NaqadaII ház forrása 3200BC
+https://en.wikipedia.org/wiki/Gerzeh_culture
+[[file:pics/GerzehcultureBC3000housemodelBritishMuseum.jpg]]
+
+Egyiptomi ház forrása a középbirodalomból. Kr. e. 1600
+https://en.wikipedia.org/wiki/Middle_Kingdom_of_Egypt
+
+
+** Modellezés története
+*** 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_opt: t
+    :END:
+- Őskor :: Szimbolikus, elvont gondolkodás, barlangrajzok, egyiptomi
+           hajómodellek, épület modellek.
+- Középkor :: Kísérleti fizikával (Galilei a kísérletei alapján a
+              természet szabályait a matematika eszközeivel írja le.)
+              kezdődik.  A modell alkotás egyre elterjedtebb, de
+              sokszor széles körben nem fogadják el (pl.: Vasa 1628,
+              HMS Captain 1870).
+- Újkor :: Göttingeni iskola, numerikus matematikai alapjai, Neumann
+           János első polgári célú számítógépes modell (időjárás előrejelzés).
+*** 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_opt: t
+    :END:
+#+BEAMER: \onslide*<1-3>{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/hmscaptain_etching.jpg]]
+#+BEAMER: }\onslide*<2-3>{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/Reed_eszucs_dialog_16_01.JPG]]
+#+BEAMER: }\onslide*<3>{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/Captain_vs_Monarch.png]]
+#+BEAMER: }
+
+**** Megjegyzések						   :noexport:
+***** Szent Pál székesegyház nagy modellje
+Anglikán székesegyház. London királyi esküvők. London ikonikus épülete.
+helye. Európa 5. legnagyobb temploma.  1:25 skálájú. 1674 ben lett
+kész a modell. Egy jó londoni ház árába került.
+[[https://www.stpauls.co.uk/history-collections/the-collections/collections-highlights/the-great-model]]
+***** Galilei
+1564-1642
+***** Newton
+1642-1727
+***** Vasa formastabilitás
+
+1628 elsüllyed
+
+A Lajos Tamás áramlástan jegyzet konkrétan emlegeti a súly-, és
+formastabilitást a testek úszásánál. Ő is példaként hozza a Vasát.
+
+***** HMS Captain
+Egy más összefoglaló, mint a wiki:
+[[https://h2g2.com/edited_entry/A87806532]]
+
+ Cowper Cole. Krími háború. Kihívások. Válasz a lövegtorony.
+
+Francia-angol technológiai fegyverkezési verseny. Rettegés a megszállástól.
+Fa hajók helyett fém testű hajók.
+
+Fontos a Cole indukálta sajtó nyomás. Beteg a fő konsturktor az építés
+alatt. Rosszabb paraméterek, mint a terven.
+
+Reed 1870 júliusában lemondott, HMS Captain Colelall a fedélzetén
+szeptemberben elsüllyedt.
+
+HMS Monarch talán nem lett modellezve, de
+Reed következő terve a HMS Devastation már modellel tesztelt lett.
+
+** Modellezés története
+*** 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+- Őskor :: Szimbolikus, elvont gondolkodás, barlangrajzok, egyiptomi
+           hajómodellek, épület modellek.
+- Középkor :: Kísérleti fizikával (Galilei a kísérletei alapján a
+              természet szabályait a matematika eszközeivel írja le.)
+              kezdődik.  A modell alkotás egyre elterjedtebb, de
+              sokszor széles körben nem fogadják el (pl.: Vasa 1628,
+              HMS Captain 1870).
+- Újkor :: Göttingeni iskola (Hilbert, Courant), numerikus matematikai
+           alapjai, Neumann János első polgári célú számítógépes
+           modell (időjárás előrejelzés).
+*** 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :BEAMER_opt: t
+    :END:
+#+BEAMER: \onslide*<1>{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/DavidHilbert.jpg]]
+#+BEAMER: }\onslide*<2->{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/RichardCourant.jpg]]
+#+BEAMER: }\onslide*<3->{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/NeumannLosAlamos.jpg]]
+#+BEAMER: }\onslide*<4->{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/NeumannENIAC.jpg]]
+#+BEAMER: }\onslide*<5->{
+#+ATTR_LATEX: :height 0.29 \textheight :center nil
+[[file:pics/GlobalClimateModel.png]]
+#+BEAMER: }
+
+**** Megj                                                          :noexport:
+Minden kép wiki
+
+A többség az alábbiról:
+https://en.wikipedia.org/wiki/History_of_numerical_weather_prediction
+
+* Szoftverválasztás                                                :noexport:
+** Szoftverválasztás kérdései
+- Szoftverlicencek
+  - Tulajdonosi (proprietary)
+  - Szabad (free)
+  - A közösség fennhatósága alá helyezett (public domain)
+- Szoftver típusok
+  - táblázatkezelő
+  - grafikus modellépítő
+  - magaszintű programnyelv (kész speciális szoftver)
+
+** A modellfejlesztés terminológiája
+#+ATTR_LATEX: :height 0.9 \textheight :center nil
+[[file:pics/korsema.pdf]]
+\scriptsize Refsgaard-Henriksen (2004)
+*** Forrás                                                         :noexport:
+[[file:~/Oktatas/folymod/irodalom/Refsgaard_Modelling_Guidelines_-_Terminology_and_Guiding_Pri.pdf]]
+
+Koncepcionális modell domén nagy kör, kisebb a kód domén és
+egészen picurka a site-specific modell. Ez akár kérdés is lehet!
+
+
+** A koncepcionális modell szerepe
+- Koncepcionális modell
+  - gyakran csak gondolati
+  - a rendelkezésre álló adatokra támaszkodik
+  - segítségével választjuk ki a modell-egyenleteket vagy a szoftvert
+- Modell kód
+  - a koncepcionális modell megvalósítása
+- Modell
+  - az adott helyre beállított modell
+
+** Szoftverválasztás és koncepcionális modell
+A szoftverválasztást gyakran meghatározza a folyamat jellege, tér és
+időbelisége.
+
+Egy egyszerű példa erre a felszíni vízfolyások leírásánál a vízállás és a
+vízhozam között fennálló kapcsolat:
+a /vízhozamgörbe/.
+
+*** 
+#+BEAMER: \onslide*<3->{
+#+ATTR_LATEX: :height 0.6 \textheight :center nil
+[[file:pics/koroshurok.jpg]]
+#+BEAMER: }\onslide*<4->{
+#+ATTR_LATEX: :height 0.6 \textheight :center nil
+[[file:pics/konturhurok.png]]
+#+BEAMER: }
+
+* Modell tipológia                                                 :noexport:
+
+** Fontosabb modelltípusok
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+
+- Fizikai vagy hardver modell
+- (Analóg modellek)
+- Matematikai modellek
+
+** Analóg modellek
+#+ATTR_LATEX: :width \textwidth
+[[file:pics/analogcomputer.png]]
+
+
+*** Kísérleti telep Voltabarrózón				   :noexport:
+
+**** Angol szöveg
+The activity that began then was the construction of the general model
+of the Venice lagoon: a 1:250 scale floor plan and elevation of 1:20
+model turned around very large occupying an area of almost 9,000
+m2. For his cover was necessary to build a huge warehouse which covers
+an area of 24,000 m2.
+
+**** Jellemzők
+Vízszintes méretarány 1:250, magassági 1:20. Elfolgalt terület
+1 ha, a befoglaló épület több mint 2 ha-os.
+
+
+** Fizikai vagy hardver modell
+#+BEAMER: \onslide*<1>{
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/Vetites/Voltabarozzo/01Venediglagune.png]]
+#+BEAMER: }\onslide*<2-3>{
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/Vetites/Voltabarozzo/02Attekinttkp.jpg]]
+#+BEAMER: }\onslide*<3>{
+#+ATTR_LATEX: :height 0.5 \textheight :center nil
+[[file:pics/Vetites/Voltabarozzo/03csarnok.jpg]]
+#+BEAMER: }\onslide*<4>{
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/Vetites/Nick/1attekint.jpg]]
+#+BEAMER: }\onslide*<5>{
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/Vetites/Dunasziget/IMG_2032.jpg]]
+#+BEAMER: }\onslide*<6>{
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/Vetites/Dunasziget/IMG_2025.jpg]]
+#+BEAMER: }\onslide*<7>{
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/Vetites/Dunasziget/IMG_2320.jpg]]
+#+BEAMER: }\onslide*<8>{
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/Vetites/Dunasziget/Kep002Kiskore.jpg]]
+#+BEAMER: }
+
+# #+BEGIN_BEAMER
+# \begin{overlayarea}{\textwidth}{0.8 \textheight}%
+# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/01Venediglagune.png}
+# \includegraphics<.|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/02Attekinttkp.jpg}
+# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/03csarnok.jpg}
+# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/04Csarnokinterior.jpg}
+# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Nick/1attekint}
+# \includegraphics<+>[height=0.8 \textheight]{pics/Vetites/Dunasziget/IMG_2032}
+# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Dunasziget/IMG_2025}
+# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Dunasziget/IMG_2320}
+# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Dunasziget/Kep002Kiskore}
+
+# \only<2|handout:0>{\small Több mint 2 ha-os épület}
+# \only<3|handout:0>{\small Vízszintes méretarány 1:250, magassági 1:20}
+# \only<4|handout:0>{\small Nick (ma már nem működik)}
+# \only<5|handout:0>{\small Dunasziget}
+# \end{overlayarea}
+# #+END_BEAMER
+
+
+# Több kép a modellezés a vízgazdálkodásban
+# Csongor mondott San Franciskó öböl modellt
+
+
+** Matematikai modellek
+
+#+ATTR_LATEX: :width \textwidth
+[[file:pics/modellcsop.pdf]]
+
+#+BEGIN_COMMENT
+\includegraphics[width=\textwidth]{pics/modellcsop}
+#+END_COMMENT
+
+** Matematikai modellek -- egyéb csoportosítások (megoldás jellege)
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+
+- Megoldás 1
+  - empirikus
+  - konceptuális
+  - fizikai alapú
+- Megoldás 2
+  - determinisztikus
+  - sztochasztikus
+  - vegyes
+- Megoldás 3
+  - analitikus
+  - numerikus
+  - kevert
+- Átláthatóság
+  - feketedoboz (black box)
+  - fehérdoboz (white box)
+  - szürkedoboz (grey box)
+
+#+BEGIN_COMMENT
+\begin{overlayarea}{\textwidth}{0.85 \textheight}%
+\only<+>{- empirikus\\
+  - konceptuális\\
+  - fizikai alapú\\ \vspace{3mm}}
+\only<+>{- feketedoboz (black box)\\
+- fehérdoboz (white box)\\
+- szürkedoboz (grey box)\\ \vspace{3mm}}
+\only<+>{- determinisztikus\\
+- sztochasztikus\\
+- vegyes\\ \vspace{3mm}}
+\only<+>{- analitikus\\
+- numerikus\\
+- kevert\\ \vspace{3mm}}
+\end{overlayarea}
+#+END_COMMENT
+
+** Matematikai modellek -- egyéb csoportosítások (tér-idő)
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+
+- Térbeliség 1
+  - összevont (lumped)
+  - térben osztott
+  - félig osztott (semi distributed)
+- Térbeliség 2
+  - 1D
+  - 2D
+  - 3D GIS szerepe!
+- Időbeliség
+  - statikus (permanens, steady-state)
+  - dinamikus (nem-permanens, non steady)
+  - kevert
+
+#+BEGIN_COMMENT
+\begin{overlayarea}{\textwidth}{0.85 \textheight}%
+\only<+>{- összevont (lumped)\\
+- térben osztott\\
+- félig osztott (semi distributed)\\ \vspace{3mm}}
+\only<+>{- 1D\\
+- 2D\\
+- 3D\\
+GIS szerepe!\\ \vspace{3mm}}
+\only<+>{- statikus (permanens, steady-state)\\
+- dinamikus (nem-permanens, non steady)\\
+- kevert}
+\end{overlayarea}
+#+END_COMMENT
+
+
+* Modellfejlesztés célok                                             :export:
+** Modellezés céljai
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Kutatási
+- Megértés eszköze
+- Szimuláció, előrejelzés eszköze
+- Virtuális laboratórium
+- Tudományágak közös nevezője
+- Kutatási termék
+- Információ átadó
+
+** Modellezés a környezetmérnökségben
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Döntéshozás
+- Hatásvizsgálat, engedélyeztetés
+- Előrejelzés
+- Megismerés (technológia, folyamat)
+
+** Megj                                                            :noexport:
+Csongor mondta, hogy jogszabály alapján pontforrás
+esetén modellezést kell végezni hatásterület meghatározásánál.
+
+* Analitikus modellalkotás                                           :export:
+
+** Felszín alatti vízmozgás
+
+*** 
+Példa a felszín alatti vízmozgás kormányozó egyenlete, a MODFLOW alapegyenlete.
+
+\begin{equation*}
+\frac{\partial}{\partial x} \left[ K_{xx} \frac{\partial h}{\partial x} \right] + \frac{\partial}{\partial y} \left[ K_{yy} \frac{\partial h}{\partial y} \right] + \frac{\partial}{\partial z} \left[ K_{zz} \frac{\partial h}{\partial z} \right] + W = S_{S} \frac{\partial h}{\partial t} \text{,}
+\end{equation*}
+
+*** 
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+ahol
+#+ATTR_BEAMER: :overlay <+->
+- $K_{xx}$, $K_{yy}$, $K_{zz}$ a szivárgási tényező
+- $x$, $y$ és $z$ irányokban,
+- $h$ a piezometrikus nyomás szintje,
+- $W$ a be- és kiáramló víz térfogata az adott térfogategységben,
+- $S_s$ a fajlagos tározás,
+- $t$ az idő.
+
+** A felszín alatti vízmozgás analitikus megoldása
+
+A bonyolultabb differenciál egyenletek, csak egyszerűsítések után
+oldhatók meg analitikusan.
+
+*** 
+#+BEAMER: \onslide*<1>{
+\begin{equation*}
+\frac{\partial}{\partial x} \left[ K_{xx} \frac{\partial h}{\partial x} \right] + \frac{\partial}{\partial y} \left[ K_{yy} \frac{\partial h}{\partial y} \right] + \frac{\partial}{\partial z} \left[ K_{zz} \frac{\partial h}{\partial z} \right] = S_{S} \frac{\partial h}{\partial t} \text{,}
+\end{equation*}
+az egész rendszert egy vízgyűjtőnek tekintve.
+#+BEAMER: }\onslide*<2>{
+\begin{equation*}
+\frac{\partial}{\partial x} \left[ K_{xx} \frac{\partial h}{\partial x} \right] + \frac{\partial}{\partial y} \left[ K_{yy} \frac{\partial h}{\partial y} \right] + \frac{\partial}{\partial z} \left[ K_{zz} \frac{\partial h}{\partial z} \right] = 0 \text{,}
+\end{equation*}
+ha feltételezzük, hogy időben nics változás.
+#+BEAMER: }\onslide*<3>{
+\begin{equation*}
+\frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{\partial^2 h}{\partial z^2} = 0 \text{,}
+\end{equation*}
+ha feltételezzük, hogy izotróp a közeg.
+#+BEAMER: }
+
+** Laplace-egyenlet
+\begin{equation*}
+\frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{\partial^2 h}{\partial z^2} = 0 \text{,}
+\end{equation*}
+#+BEAMER: \onslide*<2->{
+\begin{equation*}
+\nabla^2 h = 0
+\end{equation*}
+#+BEAMER: }\onslide*<3->{
+\begin{equation*}
+\Delta h = 0
+\end{equation*}
+#+BEAMER: }
+
+
+** Zárt tükrű galéria
+*** 
+
+Próbáljuk meg az előző egyenletet a jegyzetben leírt zárt tükrű galériánál megoldani!
+#+BEAMER: \onslide*<2->{
+A teljes vízadó nyomás alatt van, így homogén közeg esetén
+$\frac{\partial^2 h}{\partial z^2}=0$. 
+#+BEAMER: }\onslide*<3->{
+Ha a galériát elegendően
+hosszúnak vesszük, akkor $\frac{\partial^2 h}{\partial y^2}=0$.
+#+BEAMER: }
+
+*** 
+
+#+BEAMER: \alt<4>{
+$$\frac{\partial^2 h}{\partial x^2} = 0$$
+#+BEAMER: }{
+$$\frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{\partial^2 h}{\partial z^2} = 0$$
+#+BEAMER: }
+
+
+* Numerikus algoritmusok                                             :export:
+
+** Közelítő megoldások
+- Fizikai valóságot nem mindig lehet egyszerű differenciál egyenlettel leírni.
+- Sokszor nehéz analitikus megoldást találni (inhomogén közeg, egyenlet nem megoldható)
+- Parciális differenciál egyenletek numerikus megoldási módszerei, a
+  megoldást közelítik.
+
+** Véges differenciák módszere
+Az egyenlet közelítése
+#+ATTR_LATEX: :height 0.8 \textheight
+[[file:pics/initialcondition.pdf]]
+
+
+** Véges differenciák módszere
+Peremértékek:
+- Dirichlet (a cella értéke adott, állandó érték)
+- Neumann (derivált értéke adott)
+- Vegyes (Robin)
+
+*** 
+#+ATTR_LATEX: :height 0.62 \textheight
+[[file:pics/boundarycondhun.pdf]]
+
+
+** Véges elem módszer
+
+*** 
+:PROPERTIES: 
+:BEAMER_col: 0.2
+:BEAMER_env: block
+:END:
+A megoldás közelítése
+
+*** 
+:PROPERTIES:
+:BEAMER_col: 0.8
+:BEAMER_env: block
+:END:
+\includegraphics[width= 0.4 \textwidth]{pics/FEsema}
+\includegraphics[width= 0.5 \textwidth]{pics/nosplitmesh}
+
+** Véges elem módszer
+*** 
+:PROPERTIES:
+:BEAMER_col: 0.2
+:BEAMER_env: block
+:END:
+A megoldás közelítése
+
+*** 
+:PROPERTIES: 
+:BEAMER_col: 0.8
+:BEAMER_env: block
+:END:
+\includegraphics[width= 0.4 \textwidth]{pics/FEsema}
+\includegraphics[width= 0.5 \textwidth]{pics/splitmesh}
+
+
+* Modell és valóság                                                  :export:
+
+** Modellhibák és forrásaik
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Eljárási hibák
+- Mérési hibák
+- Lebegőpontos számábrázolás kerekítési hibái
+- Hibaterjedés
+- Részecskekövetés
+- Courant-Fridrichs-Lewy kritérium
+
+*** 
+  :PROPERTIES:
+  :BEAMER_act: <6>
+  :END:
+\begin{equation*}
+ C = \frac{u \Delta t}{\Delta x} \leq C_\max 
+\end{equation*}
+
+
+** Paraméter illesztés
+
+- Trial-and-error (próbálgatással, HBV példa)
+- Automatikus paraméter kalibráció
+
+#+ATTR_LATEX: :height 0.6 \textheight
+[[file:pics/OptimThornt.pdf]]
+
+#+BEGIN_COMMENT
+\includegraphics[height= 0.5 \textheight]{pics/figs_parameters_sfitter_plot2.M0_M12.mSUGRA}
+Paraméter felületek Bevenből vagy az ausztrál anyagából
+#+END_COMMENT
+
+
+** Jósági mutatószámok
+
+Nash-Sutcliffe hatékonysági mutató:
+\begin{equation*}
+NS = 1 - \frac{\sum_{i=1}^n(O_i-M_i)^2}{\sum_{i=1}^n(O_i-\bar{O})^2},
+\end{equation*}
+
+
+RMSE (root-mean-square error -- a négyzetes középhiba gyöke):
+
+\begin{equation*}
+RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n(O_i-M_i)^2}
+\end{equation*}
+
+
+ahol $O$ megfigyelés (observation), $M$ modell output.
+
+
+#+BEGIN_COMMENT
+Van néhány latex egyenletem
+#+END_COMMENT
