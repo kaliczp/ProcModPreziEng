@@ -1,5 +1,5 @@
-#+TITLE: Környezeti folyamatok modellezése
-#+DATE: 2023
+#+TITLE: Environmental Modelling
+#+DATE: 2024
 #+AUTHOR: Kalicz Péter
 #+EMAIL: kalicz.peter@uni-sopron.hu
 #+OPTIONS: ':nil *:t -:t ::t <:t H:2 \n:nil ^:t arch:headline
@@ -28,19 +28,18 @@ PaloAlto
 Pittsburgh
 
 
-* A tantárgyról                                                    :noexport:
-** Környezeti modellezés
+* About class
+** Environmental modelling
     :PROPERTIES:
     :BEAMER_ENV: normal
     :BEAMER_ACT: [<alert@+>]
     :END:
-- Tantárgyi követelmények
-- Órakeret (3 konzultáció) 
-- Évközi jegyes tárgy
-- Aláírás feltétele
-  - Házifeladatok leadása
-  - Zárthelyi dolgozat megírása
-- Kézi jegyzet vezetése ajánlott
+- Programme
+- 1 + 2
+- Mid-semester grade
+- Obligatory
+  - Homeworks
+- Handwritten notes
 # #+ATTR_LATEX: :width 0.7\textwidth
 # [[file:pics/coursera.png]]
 # - Konzultációk (6 + 9)
@@ -54,85 +53,83 @@ Pittsburgh
 - [[http://pmwin.net][~pmwin~]] telepítés (PMWIN tab és Freeware -> this file link)
 - Ismerkedés a programmal
 
-** Tananyag
+** Educational Material
     :PROPERTIES:
     :BEAMER_ENV: normal
     :BEAMER_ACT: [<alert@+>]
     :END:
 
+- Kovács: Hydrodynamic and Transport Modeling I-II. (in Hungarian)
 - Wainwright & Mulligan: Environmental Modelling. Wiley
-- Több hasonló könyv
-- Kovács: Hidrodinamikai és transzportmodellezés I.-II.
-- Kézi jegyzet
+- Several similar books
+- Handwritten notes
 
 #+BEGIN_COMMENT
 Ide kellenek a könyv ábrák
 #+END_COMMENT
 
-* Modellekről                                                      :noexport:
+* About Models
 
-** Definíció helyett
+** Beyond Definition
     :PROPERTIES:
     :BEAMER_ENV: normal
     :END:
 
 *** 
  #+ATTR_BEAMER: :overlay <+->
- - Modellek a mindennapokban. Mit jelent nekünk?
- - Mi a modell?
- - A valóság egy adott célnak megfelelő vetülete
- - Elvonatkoztatás (tükör)
- - Ockham borotvája (gazdaságossági elv, azaz optimális paraméterszám)
+ - Models in everyday life. What does it mean to us?
+ - What is a model?
+ - The reality's projection corresponding to a specific purpose
+ - Abstraction (mirror)
+ - Occam's razor (principle of parsimony, i.e., optimal number of parameters)
 
 *** 
   :PROPERTIES:
   :BEAMER_env: theorem
   :BEAMER_act: <2>
   :END:
- A modell általában létező tárgyak, folyamatok, rendszerek
- célszerűen egyszerűsített megfelelője: olyan fizikai vagy csupán
- leírt térbeli konstrukció, amely sematikus formában, vagy
- egyezményesen elfogadott jelölésekkel mintáz le, illetve ábrázol
- bizonyos tárgyi területet, folyamatot vagy rendszert. Minél
- bonyolultabb a rendszer, annál nagyobb szükség van modellezésre
- (Bodlaki 2004).
+ Generally, a model is a conveniently simplified counterpart
+ of existing objects, processes, or systems: a physical or
+ merely described spatial construct that models, or depicts
+ schematically, a certain subject area, process, or system using
+ accepted notations. The more complex the system, the greater
+ the need for modeling (Bodlaki 2004).
 
  #+BEGIN_COMMENT
- Egy Pollack jegyzetből jött le elsőre. Elég lexikon íze van.
- Bodlaki Tamás: Bevezetés az operációs rendszerekbe. PTE, 2004. egy
- doktori hivatkozás szerint.
+Egy Pollack jegyzetből jött le elsőre. Elég lexikon íze van.
+Bodlaki Tamás: Bevezetés az operációs rendszerekbe. PTE, 2004. egy
+doktori hivatkozás szerint.
  #+END_COMMENT
 
-** Modellezés kérdései -- és veszélyei
+** Questions and Risks of Modeling
     :PROPERTIES:
     :BEAMER_ENV: normal
     :BEAMER_ACT: [<alert@+>]
     :END:
-- Mi a megoldandó probléma?
-- Melyek a lényeges folyamatok?
-- Mi a megfelelő tér- és időlépték?
-- Ki fogja hasznosítani a munkát?
+- What is the problem to be solved?
+- What are the essential processes?
+- What is the appropriate space and time scale?
+- Who will benefit from the work?
 
-- Nincs modellezés cél nélkül!
-- Nincs univerzális világmodell!
+- There is no modeling without a goal!
+- There is no universal world model!
 
-
- Modellezés történet                                              :noexport:
-** Modellezés története
+* History of Modeling
+** History of Modeling
 *** 
     :PROPERTIES:
     :BEAMER_env: block
     :BEAMER_opt: t
     :END:
-- Őskor :: Szimbolikus, elvont gondolkodás, barlangrajzok, egyiptomi
-           hajómodellek, épület modellek.
-- Középkor :: Kísérleti fizikával (Galilei a kísérletei alapján a
-              természet szabályait a matematika eszközeivel írja le.)
-              kezdődik.  A modell alkotás egyre elterjedtebb, de
-              sokszor széles körben nem fogadják el (pl.: Vasa 1628,
-              HMS Captain 1870).
-- Újkor :: Göttingeni iskola, numerikus matematikai alapjai, Neumann
-           János első polgári célú számítógépes modell (időjárás előrejelzés).
+- Prehistoric :: Symbolic, abstract thinking, cave drawings, Egyptian
+                 ship models, building models.
+- Medieval :: Begins with experimental physics (Galileo describes the
+              laws of nature based on his experiments using mathematical tools.)
+              The creation of models becomes more widespread, but
+              often not widely accepted (e.g., Vasa 1628, HMS Captain 1870).
+- Modern :: Göttingen school, numerical mathematical foundations,
+            von Neumann's first computer model for civil purposes (weather forecasting).
+
 *** 
     :PROPERTIES:
     :BEAMER_env: block
@@ -171,21 +168,20 @@ Egyiptomi ház forrása a középbirodalomból. Kr. e. 1600
 https://en.wikipedia.org/wiki/Middle_Kingdom_of_Egypt
 
 
-** Modellezés története
+** History of Modeling
 *** 
     :PROPERTIES:
     :BEAMER_env: block
     :BEAMER_opt: t
     :END:
-- Őskor :: Szimbolikus, elvont gondolkodás, barlangrajzok, egyiptomi
-           hajómodellek, épület modellek.
-- Középkor :: Kísérleti fizikával (Galilei a kísérletei alapján a
-              természet szabályait a matematika eszközeivel írja le.)
-              kezdődik.  A modell alkotás egyre elterjedtebb, de
-              sokszor széles körben nem fogadják el (pl.: Vasa 1628,
-              HMS Captain 1870).
-- Újkor :: Göttingeni iskola, numerikus matematikai alapjai, Neumann
-           János első polgári célú számítógépes modell (időjárás előrejelzés).
+- Prehistoric :: Symbolic, abstract thinking, cave drawings, Egyptian
+                 ship models, building models.
+- Medieval :: Begins with experimental physics (Galileo describes the
+              laws of nature based on his experiments using mathematical tools.)
+              The creation of models becomes more widespread, but
+              often not widely accepted (e.g., Vasa 1628, HMS Captain 1870).
+- Modern :: Göttingen school, numerical mathematical foundations,
+            von Neumann's first computer model for civil purposes (weather forecasting).
 *** 
     :PROPERTIES:
     :BEAMER_env: block
@@ -237,21 +233,19 @@ szeptemberben elsüllyedt.
 HMS Monarch talán nem lett modellezve, de
 Reed következő terve a HMS Devastation már modellel tesztelt lett.
 
-** Modellezés története
+** History of Modeling
 *** 
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-- Őskor :: Szimbolikus, elvont gondolkodás, barlangrajzok, egyiptomi
-           hajómodellek, épület modellek.
-- Középkor :: Kísérleti fizikával (Galilei a kísérletei alapján a
-              természet szabályait a matematika eszközeivel írja le.)
-              kezdődik.  A modell alkotás egyre elterjedtebb, de
-              sokszor széles körben nem fogadják el (pl.: Vasa 1628,
-              HMS Captain 1870).
-- Újkor :: Göttingeni iskola (Hilbert, Courant), numerikus matematikai
-           alapjai, Neumann János első polgári célú számítógépes
-           modell (időjárás előrejelzés).
+- Prehistoric :: Symbolic, abstract thinking, cave drawings, Egyptian
+                 ship models, building models.
+- Medieval :: Begins with experimental physics (Galileo describes the
+              laws of nature based on his experiments using mathematical tools.)
+              The creation of models becomes more widespread, but
+              often not widely accepted (e.g., Vasa 1628, HMS Captain 1870).
+- Modern :: Göttingen school, numerical mathematical foundations,
+            von Neumann's first computer model for civil purposes (weather forecasting).
 *** 
     :PROPERTIES:
     :BEAMER_env: block
@@ -280,18 +274,24 @@ Minden kép wiki
 A többség az alábbiról:
 https://en.wikipedia.org/wiki/History_of_numerical_weather_prediction
 
-* Szoftverválasztás                                                :noexport:
-** Szoftverválasztás kérdései
-- Szoftverlicencek
-  - Tulajdonosi (proprietary)
-  - Szabad (free)
-  - A közösség fennhatósága alá helyezett (public domain)
-- Szoftver típusok
-  - táblázatkezelő
-  - grafikus modellépítő
-  - magaszintű programnyelv (kész speciális szoftver)
+* Software Selection                                                :export:
+** Issues of Software Selection
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Software Licenses
+  - Proprietary
+  - Free
+  - Public Domain
+- Types of Software
+  - Spreadsheet
+  - Graphical modeling tool
+  - High-level programming language (dedicated specialized software)
 
-** A modellfejlesztés terminológiája
+
+* Terminology of Model Development                                   :export:
+** Terminology of Model Development
 #+ATTR_LATEX: :height 0.9 \textheight :center nil
 [[file:pics/korsema.pdf]]
 \scriptsize Refsgaard-Henriksen (2004)
@@ -606,7 +606,7 @@ $$\frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{
 #+BEAMER: }
 
 
-* Numerikus algoritmusok                                             :export:
+* Numerikus algoritmusok                                             :noexport:
 
 ** Közelítő megoldások
 - Fizikai valóságot nem mindig lehet egyszerű differenciál egyenlettel leírni.
@@ -665,7 +665,7 @@ A megoldás közelítése
 \includegraphics[width= 0.5 \textwidth]{pics/splitmesh}
 
 
-* Modell és valóság                                                  :export:
+* Modell és valóság                                                  :noexport:
 
 ** Modellhibák és forrásaik
     :PROPERTIES:
