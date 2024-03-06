@@ -293,9 +293,10 @@ https://en.wikipedia.org/wiki/History_of_numerical_weather_prediction
 * Terminology of Model Development                                   :export:
 ** Terminology of Model Development
 #+ATTR_LATEX: :height 0.9 \textheight :center nil
-[[file:pics/korsema.pdf]]
-\scriptsize Refsgaard-Henriksen (2004)
+[[file:pics/korsemaEN.png]]
+\scriptsize [[https://doi.org/10.1016/j.advwatres.2003.08.006][Refsgaard-Henriksen (2004)]]
 *** Forrás                                                         :noexport:
+
 [[file:~/Oktatas/folymod/irodalom/Refsgaard_Modelling_Guidelines_-_Terminology_and_Guiding_Pri.pdf]]
 
 Koncepcionális modell domén nagy kör, kisebb a kód domén és
