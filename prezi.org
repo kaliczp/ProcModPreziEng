@@ -114,6 +114,34 @@ doktori hivatkozás szerint.
 - There is no modeling without a goal!
 - There is no universal world model!
 
+* Purpose of Modelling
+** The Purpose of Modelling
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- As an aid to research
+- As a tool for understanding
+- As a tool for simulation and prediction
+- As a virtual laboratory
+- As an integrator within and between disciplines
+- As a research product
+- As a means of communicationg science and the results
+
+** Modelling in Environmental Engineering
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Decision making
+- Predictions
+- Large investments impact assesment
+- Exploration (technological, process)
+
+** Megj                                                            :noexport:
+Csongor mondta, hogy jogszabály alapján pontforrás
+esetén modellezést kell végezni hatásterület meghatározásánál.
+
 * History of Modeling
 ** History of Modeling
 *** 
@@ -495,34 +523,6 @@ GIS szerepe!\\ \vspace{3mm}}
 \end{overlayarea}
 #+END_COMMENT
 
-
-* Modellfejlesztés célok                                             :export:
-** Modellezés céljai
-    :PROPERTIES:
-    :BEAMER_ENV: normal
-    :BEAMER_ACT: [<alert@+>]
-    :END:
-- Kutatási
-- Megértés eszköze
-- Szimuláció, előrejelzés eszköze
-- Virtuális laboratórium
-- Tudományágak közös nevezője
-- Kutatási termék
-- Információ átadó
-
-** Modellezés a környezetmérnökségben
-    :PROPERTIES:
-    :BEAMER_ENV: normal
-    :BEAMER_ACT: [<alert@+>]
-    :END:
-- Döntéshozás
-- Hatásvizsgálat, engedélyeztetés
-- Előrejelzés
-- Megismerés (technológia, folyamat)
-
-** Megj                                                            :noexport:
-Csongor mondta, hogy jogszabály alapján pontforrás
-esetén modellezést kell végezni hatásterület meghatározásánál.
 
 * Analitikus modellalkotás                                           :export:
 
