@@ -302,7 +302,7 @@ Minden kép wiki
 A többség az alábbiról:
 https://en.wikipedia.org/wiki/History_of_numerical_weather_prediction
 
-* Software Selection                                                :export:
+* Software Selection
 ** Issues of Software Selection
     :PROPERTIES:
     :BEAMER_ENV: normal
@@ -331,23 +331,21 @@ Koncepcionális modell domén nagy kör, kisebb a kód domén és
 egészen picurka a site-specific modell. Ez akár kérdés is lehet!
 
 
-** A koncepcionális modell szerepe
-- Koncepcionális modell
-  - gyakran csak gondolati
-  - a rendelkezésre álló adatokra támaszkodik
-  - segítségével választjuk ki a modell-egyenleteket vagy a szoftvert
-- Modell kód
-  - a koncepcionális modell megvalósítása
-- Modell
-  - az adott helyre beállított modell
+** The Role of the Conceptual Model
+- Conceptual Model
+  - often merely theoretical
+  - relies on available data
+  - aids in selecting the model equations or software
+- Model Code
+  - the implementation of the conceptual model
+- Site-specific model
+  - the model adjusted for the specific location
 
-** Szoftverválasztás és koncepcionális modell
-A szoftverválasztást gyakran meghatározza a folyamat jellege, tér és
-időbelisége.
+** Software Selection and Conceptual Model
+The choice of software is often determined by the nature of the process, its spatial and temporal dimensions.
 
-Egy egyszerű példa erre a felszíni vízfolyások leírásánál a vízállás és a
-vízhozam között fennálló kapcsolat:
-a /vízhozamgörbe/.
+A simple example of this is in describing surface water flows, the relationship between water level and discharge:
+the /rating curve/.
 
 *** 
 #+BEAMER: \onslide*<3->{
@@ -358,21 +356,28 @@ a /vízhozamgörbe/.
 [[file:pics/konturhurok.png]]
 #+BEAMER: }
 
-* Modell tipológia                                                 :noexport:
+* Modell typology                                                  :export:
 
-** Fontosabb modelltípusok
+** Important modell types
     :PROPERTIES:
     :BEAMER_ENV: normal
     :BEAMER_ACT: [<alert@+>]
     :END:
 
-- Fizikai vagy hardver modell
-- (Analóg modellek)
-- Matematikai modellek
+- Hardware models
+- (Analogue model)
+- Mathematical model
 
-** Analóg modellek
+** Analogue model
 #+ATTR_LATEX: :width \textwidth
 [[file:pics/analogcomputer.png]]
+
+
+** Hardware modell Biosphere2
+
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
+[[file:pics/WikiBio2.jpg]]
+
 
 
 *** Kísérleti telep Voltabarrózón				   :noexport:
@@ -388,8 +393,9 @@ an area of 24,000 m2.
 Vízszintes méretarány 1:250, magassági 1:20. Elfolgalt terület
 1 ha, a befoglaló épület több mint 2 ha-os.
 
+Képek a tárgy Vetítés mappájában
 
-** Fizikai vagy hardver modell
+** Hardware modell
 #+BEAMER: \onslide*<1>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Voltabarozzo/01Venediglagune.png]]
@@ -440,37 +446,37 @@ Vízszintes méretarány 1:250, magassági 1:20. Elfolgalt terület
 # Csongor mondott San Franciskó öböl modellt
 
 
-** Matematikai modellek
+** Mathematical models
 
 #+ATTR_LATEX: :width \textwidth
-[[file:pics/modellcsop.pdf]]
+[[file:pics/modellcsopen.pdf]]
 
 #+BEGIN_COMMENT
 \includegraphics[width=\textwidth]{pics/modellcsop}
 #+END_COMMENT
 
-** Matematikai modellek -- egyéb csoportosítások (megoldás jellege)
+** Mathematical Models -- Other Classifications (Nature of Solution)
     :PROPERTIES:
     :BEAMER_ENV: normal
     :BEAMER_ACT: [<alert@+>]
     :END:
 
-- Megoldás 1
-  - empirikus
-  - konceptuális
-  - fizikai alapú
-- Megoldás 2
-  - determinisztikus
-  - sztochasztikus
-  - vegyes
-- Megoldás 3
-  - analitikus
-  - numerikus
-  - kevert
-- Átláthatóság
-  - feketedoboz (black box)
-  - fehérdoboz (white box)
-  - szürkedoboz (grey box)
+- Solution 1
+  - empirical
+  - conceptual
+  - physically based
+- Solution 2
+  - deterministic
+  - stochastic
+  - mixed
+- Solution 3
+  - analytical
+  - numerical
+  - hybrid
+- Transparency
+  - black box
+  - white box
+  - grey box
 
 #+BEGIN_COMMENT
 \begin{overlayarea}{\textwidth}{0.85 \textheight}%
@@ -489,24 +495,25 @@ Vízszintes méretarány 1:250, magassági 1:20. Elfolgalt terület
 \end{overlayarea}
 #+END_COMMENT
 
-** Matematikai modellek -- egyéb csoportosítások (tér-idő)
+** Mathematical Models -- Other Classifications (Space-Time)
     :PROPERTIES:
     :BEAMER_ENV: normal
     :BEAMER_ACT: [<alert@+>]
     :END:
 
-- Térbeliség 1
-  - összevont (lumped)
-  - térben osztott
-  - félig osztott (semi distributed)
-- Térbeliség 2
+
+- Spatiality 1
+  - lumped
+  - spatially distributed
+  - semi-distributed
+- Spatiality 2
   - 1D
   - 2D
-  - 3D GIS szerepe!
-- Időbeliség
-  - statikus (permanens, steady-state)
-  - dinamikus (nem-permanens, non steady)
-  - kevert
+  - 3D The role of GIS!
+- Temporality
+  - static (steady-state, permanent)
+  - dynamic (non-steady, non-permanent)
+  - mixed
 
 #+BEGIN_COMMENT
 \begin{overlayarea}{\textwidth}{0.85 \textheight}%
@@ -524,12 +531,13 @@ GIS szerepe!\\ \vspace{3mm}}
 #+END_COMMENT
 
 
-* Analitikus modellalkotás                                           :export:
+* Analytical Modelling                                           :export:
 
-** Felszín alatti vízmozgás
+** Subsurface Water Movement
+
 
 *** 
-Példa a felszín alatti vízmozgás kormányozó egyenlete, a MODFLOW alapegyenlete.
+Example of the governing equation for subsurface water movement. It is the basic equation of MODFLOW.
 
 \begin{equation*}
 \frac{\partial}{\partial x} \left[ K_{xx} \frac{\partial h}{\partial x} \right] + \frac{\partial}{\partial y} \left[ K_{yy} \frac{\partial h}{\partial y} \right] + \frac{\partial}{\partial z} \left[ K_{zz} \frac{\partial h}{\partial z} \right] + W = S_{S} \frac{\partial h}{\partial t} \text{,}
@@ -539,39 +547,38 @@ Példa a felszín alatti vízmozgás kormányozó egyenlete, a MODFLOW alapegyen
     :PROPERTIES:
     :BEAMER_env: block
     :END:
-ahol
+where
 #+ATTR_BEAMER: :overlay <+->
-- $K_{xx}$, $K_{yy}$, $K_{zz}$ a szivárgási tényező
-- $x$, $y$ és $z$ irányokban,
-- $h$ a piezometrikus nyomás szintje,
-- $W$ a be- és kiáramló víz térfogata az adott térfogategységben,
-- $S_s$ a fajlagos tározás,
-- $t$ az idő.
+- $K_{xx}$, $K_{yy}$, $K_{zz}$ are the hydraulic conductivities
+- in the $x$, $y$, and $z$ directions,
+- $h$ is the piezometric pressure level,
+- $W$ is the volume of water inflow and outflow in the given volume,
+- $S_s$ is the specific storage,
+- $t$ is time.
 
-** A felszín alatti vízmozgás analitikus megoldása
+** Analytical Solution to Subsurface Water Movement
 
-A bonyolultabb differenciál egyenletek, csak egyszerűsítések után
-oldhatók meg analitikusan.
+More complex differential equations can only be solved analytically after simplifications.
 
 *** 
 #+BEAMER: \onslide*<1>{
 \begin{equation*}
 \frac{\partial}{\partial x} \left[ K_{xx} \frac{\partial h}{\partial x} \right] + \frac{\partial}{\partial y} \left[ K_{yy} \frac{\partial h}{\partial y} \right] + \frac{\partial}{\partial z} \left[ K_{zz} \frac{\partial h}{\partial z} \right] = S_{S} \frac{\partial h}{\partial t} \text{,}
 \end{equation*}
-az egész rendszert egy vízgyűjtőnek tekintve.
+considering the whole system as a watershed.
 #+BEAMER: }\onslide*<2>{
 \begin{equation*}
 \frac{\partial}{\partial x} \left[ K_{xx} \frac{\partial h}{\partial x} \right] + \frac{\partial}{\partial y} \left[ K_{yy} \frac{\partial h}{\partial y} \right] + \frac{\partial}{\partial z} \left[ K_{zz} \frac{\partial h}{\partial z} \right] = 0 \text{,}
 \end{equation*}
-ha feltételezzük, hogy időben nics változás.
+assuming there are no changes over time.
 #+BEAMER: }\onslide*<3>{
 \begin{equation*}
 \frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{\partial^2 h}{\partial z^2} = 0 \text{,}
 \end{equation*}
-ha feltételezzük, hogy izotróp a közeg.
+assuming the medium is isotropic.
 #+BEAMER: }
 
-** Laplace-egyenlet
+** Laplace's Equation
 \begin{equation*}
 \frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{\partial^2 h}{\partial z^2} = 0 \text{,}
 \end{equation*}
@@ -586,16 +593,15 @@ ha feltételezzük, hogy izotróp a közeg.
 #+BEAMER: }
 
 
-** Zárt tükrű galéria
+** Closed Mirror Horizontal Drain
 *** 
 
-Próbáljuk meg az előző egyenletet a jegyzetben leírt zárt tükrű galériánál megoldani!
+Let's try to solve the previous equation in the horizontal drain!
 #+BEAMER: \onslide*<2->{
-A teljes vízadó nyomás alatt van, így homogén közeg esetén
+The entire aquifer is under pressure, so in a homogeneous medium,
 $\frac{\partial^2 h}{\partial z^2}=0$. 
 #+BEAMER: }\onslide*<3->{
-Ha a galériát elegendően
-hosszúnak vesszük, akkor $\frac{\partial^2 h}{\partial y^2}=0$.
+Assuming the gallery is sufficiently long, $\frac{\partial^2 h}{\partial y^2}=0$.
 #+BEAMER: }
 
 *** 
