@@ -318,7 +318,7 @@ https://en.wikipedia.org/wiki/History_of_numerical_weather_prediction
   - High-level programming language (dedicated specialized software)
 
 
-* Terminology of Model Development                                   :export:
+x* Terminology of Model Development
 ** Terminology of Model Development
 #+ATTR_LATEX: :height 0.9 \textheight :center nil
 [[file:pics/korsemaEN.png]]
@@ -356,7 +356,7 @@ the /rating curve/.
 [[file:pics/konturhurok.png]]
 #+BEAMER: }
 
-* Modell typology                                                  :export:
+* Modell typology
 
 ** Important modell types
     :PROPERTIES:
@@ -531,7 +531,7 @@ GIS szerepe!\\ \vspace{3mm}}
 #+END_COMMENT
 
 
-* Analytical Modelling                                           :export:
+* Analytical Modelling
 
 ** Subsurface Water Movement
 
