@@ -126,7 +126,7 @@ doktori hivatkozás szerint.
 - As a virtual laboratory
 - As an integrator within and between disciplines
 - As a research product
-- As a means of communicationg science and the results
+- As a means of communicating science and the results
 
 ** Modelling in Environmental Engineering
     :PROPERTIES:
