@@ -166,16 +166,16 @@ esetén modellezést kell végezni hatásterület meghatározásánál.
 #+BEAMER: \onslide*<1->{
 #+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/42210_barlangrajz1.jpg]]
-#+BEAMER: }\onslide*<2>{
+#+BEAMER: }\onslide*<2|handout:0>{
 #+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egyptKhufuGisehSonnenbarke.jpg]]
 #+BEAMER: }\onslide*<3->{
 #+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egypt_600px-Ship_model_E284_mg_8648-black.jpg]]
-#+BEAMER: }\onslide*<4>{
+#+BEAMER: }\onslide*<4|handout:0>{
 #+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egyptPreDynasticModelHouseEl-AmraNaqadaIICuntil3200BCEBritishMuseumEA35505.jpg]]
-#+BEAMER: }\onslide*<5>{
+#+BEAMER: }\onslide*<5|handout:0>{
 #+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egypt_House_MK.jpg]]
 #+BEAMER: }\onslide*<6>{
@@ -279,7 +279,7 @@ Reed következő terve a HMS Devastation már modellel tesztelt lett.
     :BEAMER_env: block
     :BEAMER_opt: t
     :END:
-#+BEAMER: \onslide*<1>{
+#+BEAMER: \onslide*<1|handout:0>{
 #+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/DavidHilbert.jpg]]
 #+BEAMER: }\onslide*<2->{
