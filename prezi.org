@@ -164,22 +164,22 @@ esetén modellezést kell végezni hatásterület meghatározásánál.
     :BEAMER_opt: t
     :END:
 #+BEAMER: \onslide*<1->{
-#+ATTR_LATEX: :height 0.3 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/42210_barlangrajz1.jpg]]
 #+BEAMER: }\onslide*<2>{
-#+ATTR_LATEX: :height 0.3 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egyptKhufuGisehSonnenbarke.jpg]]
-#+BEAMER: }\onslide*<3>{
-#+ATTR_LATEX: :height 0.3 \textheight :center nil
+#+BEAMER: }\onslide*<3->{
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egypt_600px-Ship_model_E284_mg_8648-black.jpg]]
 #+BEAMER: }\onslide*<4>{
-#+ATTR_LATEX: :height 0.3 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egyptPreDynasticModelHouseEl-AmraNaqadaIICuntil3200BCEBritishMuseumEA35505.jpg]]
-#+BEAMER: }\onslide*<5->{
-#+ATTR_LATEX: :height 0.3 \textheight :center nil
+#+BEAMER: }\onslide*<5>{
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/egypt_House_MK.jpg]]
 #+BEAMER: }\onslide*<6>{
-#+ATTR_LATEX: :height 0.3 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/Wren_modelStPaulLondon.jpg]]
 #+BEAMER: }
 
@@ -216,13 +216,13 @@ https://en.wikipedia.org/wiki/Middle_Kingdom_of_Egypt
     :BEAMER_opt: t
     :END:
 #+BEAMER: \onslide*<1-3>{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/hmscaptain_etching.jpg]]
 #+BEAMER: }\onslide*<2-3>{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/Reed_eszucs_dialog_16_01.JPG]]
 #+BEAMER: }\onslide*<3>{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/Captain_vs_Monarch.png]]
 #+BEAMER: }
 
@@ -280,19 +280,19 @@ Reed következő terve a HMS Devastation már modellel tesztelt lett.
     :BEAMER_opt: t
     :END:
 #+BEAMER: \onslide*<1>{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/DavidHilbert.jpg]]
 #+BEAMER: }\onslide*<2->{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/RichardCourant.jpg]]
 #+BEAMER: }\onslide*<3->{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/NeumannLosAlamos.jpg]]
 #+BEAMER: }\onslide*<4->{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/NeumannENIAC.jpg]]
 #+BEAMER: }\onslide*<5->{
-#+ATTR_LATEX: :height 0.29 \textheight :center nil
+#+ATTR_LATEX: :height 0.23 \textheight :center nil
 [[file:pics/GlobalClimateModel.png]]
 #+BEAMER: }
 
