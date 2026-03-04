@@ -318,7 +318,7 @@ https://en.wikipedia.org/wiki/History_of_numerical_weather_prediction
   - High-level programming language (dedicated specialized software)
 
 
-x* Terminology of Model Development
+* Terminology of Model Development
 ** Terminology of Model Development
 #+ATTR_LATEX: :height 0.9 \textheight :center nil
 [[file:pics/korsemaEN.png]]
