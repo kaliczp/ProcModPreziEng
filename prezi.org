@@ -402,8 +402,8 @@ Képek a tárgy Vetítés mappájában
 #+BEAMER: }\onslide*<2-3|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Voltabarozzo/02Attekinttkp.jpg]]
-#+BEAMER: }\onslide*<3|handout:0>{
-#+ATTR_LATEX: :height 0.8+ \textheight :center nil
+#+BEAMER: }\onslide*<3|handout:0>{\hfill{}
+#+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Voltabarozzo/AllCsarnok.jpg]]
 #+BEAMER: }\onslide*<4|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
