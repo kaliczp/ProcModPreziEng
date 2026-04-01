@@ -396,50 +396,36 @@ Vízszintes méretarány 1:250, magassági 1:20. Elfolgalt terület
 Képek a tárgy Vetítés mappájában
 
 ** Hardware modell
-#+BEAMER: \onslide*<1>{
+#+BEAMER: \onslide*<1|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Voltabarozzo/01Venediglagune.png]]
-#+BEAMER: }\onslide*<2-3>{
+#+BEAMER: }\onslide*<2-3|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Voltabarozzo/02Attekinttkp.jpg]]
-#+BEAMER: }\onslide*<3>{
+#+BEAMER: }\onslide*<3|handout:0>{
 #+ATTR_LATEX: :height 0.5 \textheight :center nil
 [[file:pics/Vetites/Voltabarozzo/03csarnok.jpg]]
-#+BEAMER: }\onslide*<4>{
+#+BEAMER: }\onslide*<4|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Nick/1attekint.jpg]]
 #+BEAMER: }\onslide*<5>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Dunasziget/IMG_2032.jpg]]
-#+BEAMER: }\onslide*<6>{
+#+BEAMER: }\onslide*<6|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Dunasziget/IMG_2025.jpg]]
-#+BEAMER: }\onslide*<7>{
+#+BEAMER: }\onslide*<7|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Dunasziget/IMG_2320.jpg]]
-#+BEAMER: }\onslide*<8>{
+#+BEAMER: }\onslide*<8|handout:0>{
 #+ATTR_LATEX: :height 0.8 \textheight :center nil
 [[file:pics/Vetites/Dunasziget/Kep002Kiskore.jpg]]
 #+BEAMER: }
-
-# #+BEGIN_BEAMER
-# \begin{overlayarea}{\textwidth}{0.8 \textheight}%
-# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/01Venediglagune.png}
-# \includegraphics<.|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/02Attekinttkp.jpg}
-# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/03csarnok.jpg}
-# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Voltabarozzo/04Csarnokinterior.jpg}
-# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Nick/1attekint}
-# \includegraphics<+>[height=0.8 \textheight]{pics/Vetites/Dunasziget/IMG_2032}
-# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Dunasziget/IMG_2025}
-# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Dunasziget/IMG_2320}
-# \includegraphics<+|handout:0>[height=0.8 \textheight]{pics/Vetites/Dunasziget/Kep002Kiskore}
 
 # \only<2|handout:0>{\small Több mint 2 ha-os épület}
 # \only<3|handout:0>{\small Vízszintes méretarány 1:250, magassági 1:20}
 # \only<4|handout:0>{\small Nick (ma már nem működik)}
 # \only<5|handout:0>{\small Dunasziget}
-# \end{overlayarea}
-# #+END_BEAMER
 
 
 # Több kép a modellezés a vízgazdálkodásban
