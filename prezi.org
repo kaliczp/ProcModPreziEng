@@ -422,15 +422,11 @@ Képek a tárgy Vetítés mappájában
 [[file:pics/Vetites/Dunasziget/Kep002Kiskore.jpg]]
 #+BEAMER: }
 
-# \only<2|handout:0>{\small Több mint 2 ha-os épület}
-# \only<3|handout:0>{\small Vízszintes méretarány 1:250, magassági 1:20}
-# \only<4|handout:0>{\small Nick (ma már nem működik)}
-# \only<5|handout:0>{\small Dunasziget}
-
+#+BEAMER: \onslide*<2>{\tiny \ }
+#+BEAMER: \onslide*<3>{\raggedleft \tiny Almost 1 ha model area. Horizontal scale 1:250, vertical 1:20.}
 
 # Több kép a modellezés a vízgazdálkodásban
 # Csongor mondott San Franciskó öböl modellt
-
 
 ** Mathematical models
 
