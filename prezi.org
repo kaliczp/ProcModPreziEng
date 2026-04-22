@@ -575,7 +575,7 @@ assuming the medium is isotropic.
 #+BEAMER: }
 
 
-** Closed Mirror Horizontal Drain
+** Closed Mirror Horizontal Wellpoint
 *** 
 
 Let's try to solve the previous equation in the horizontal drain!
