@@ -594,6 +594,7 @@ $$\frac{\partial^2 h}{\partial x^2} = 0$$
 $$\frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{\partial^2 h}{\partial z^2} = 0$$
 #+BEAMER: }
 
+** Calculate Horizontal Wellpoint Data
 
 * Numerikus algoritmusok                                             :noexport:
 
