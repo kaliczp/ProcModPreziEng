@@ -596,6 +596,64 @@ $$\frac{\partial^2 h}{\partial x^2} + \frac{\partial^2 h}{\partial y^2} + \frac{
 
 ** Calculate Horizontal Wellpoint Data
 
+
+* Numerical Algorithms                                               :export:
+
+** Approximate Solutions
+- Physical reality cannot always be described by simple differential equations.
+- It is often difficult to find an analytical solution (inhomogeneous medium, unsolvable equation).
+- Numerical solution methods for partial differential equations provide approximate solutions.
+
+** Finite Difference Method
+Approximation of the equation
+#+ATTR_LATEX: :height 0.8 \textheight
+[[file:pics/initialcondition.pdf]]
+
+
+** Finite Difference Method
+Boundary conditions:
+- Dirichlet (the value of the cell is given, constant value)
+- Neumann (the value of the derivative is given)
+- Mixed (Robin)
+
+*** 
+#+ATTR_LATEX: :height 0.62 \textheight
+[[file:pics/boundarycondhun.pdf]]
+
+
+** Finite Element Method
+
+*** 
+:PROPERTIES:
+:BEAMER_col: 0.2
+:BEAMER_env: block
+:END:
+Approximation of the solution
+
+*** 
+:PROPERTIES:
+:BEAMER_col: 0.8
+:BEAMER_env: block
+:END:
+\includegraphics[width= 0.4 \textwidth]{pics/FEsema}
+\includegraphics[width= 0.5 \textwidth]{pics/nosplitmesh}
+
+** Finite Element Method
+*** 
+:PROPERTIES:
+:BEAMER_col: 0.2
+:BEAMER_env: block
+:END:
+Approximation of the solution
+
+*** 
+:PROPERTIES:
+:BEAMER_col: 0.8
+:BEAMER_env: block
+:END:
+\includegraphics[width= 0.4 \textwidth]{pics/FEsema}
+\includegraphics[width= 0.5 \textwidth]{pics/splitmesh}
+
 * Numerikus algoritmusok                                             :noexport:
 
 ** Közelítő megoldások
