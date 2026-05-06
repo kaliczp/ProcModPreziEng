@@ -779,6 +779,7 @@ Van néhány latex egyenletem
     :BEAMER_ENV: normal
     :BEAMER_ACT: [<alert@+>]
     :END:
+- Parameter sensitivity
 - Methodological errors
 - Measurement errors
 - Rounding errors due to floating-point representation
