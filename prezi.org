@@ -771,3 +771,57 @@ ahol $O$ megfigyelés (observation), $M$ modell output.
 #+BEGIN_COMMENT
 Van néhány latex egyenletem
 #+END_COMMENT
+
+* Model and Reality                                                  :export:
+
+** Model Errors and Their Sources
+    :PROPERTIES:
+    :BEAMER_ENV: normal
+    :BEAMER_ACT: [<alert@+>]
+    :END:
+- Methodological errors
+- Measurement errors
+- Rounding errors due to floating-point representation
+- Error propagation
+- Particle tracking
+- Courant–Friedrichs–Lewy criterion
+
+*** 
+  :PROPERTIES:
+  :BEAMER_act: <6>
+  :END:
+\begin{equation*}
+ C = \frac{u \Delta t}{\Delta x} \leq C_\max
+\end{equation*}
+
+
+** Parameter Calibration
+
+- Trial-and-error (manual calibration, e.g. HBV model)
+- Automatic parameter calibration
+
+#+ATTR_LATEX: :height 0.6 \textheight
+[[file:pics/OptimThornt.pdf]]
+
+#+BEGIN_COMMENT
+\includegraphics[height= 0.5 \textheight]{pics/figs_parameters_sfitter_plot2.M0_M12.mSUGRA}
+Parameter surfaces from Beven or from Australian materials
+#+END_COMMENT
+
+
+** Model Performance Metrics
+
+Nash–Sutcliffe efficiency coefficient:
+\begin{equation*}
+NS = 1 - \frac{\sum_{i=1}^n(O_i-M_i)^2}{\sum_{i=1}^n(O_i-\bar{O})^2},
+\end{equation*}
+
+
+RMSE (root mean square error):
+
+\begin{equation*}
+RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^n(O_i-M_i)^2}
+\end{equation*}
+
+
+where $O$ denotes observations and $M$ denotes model output.
